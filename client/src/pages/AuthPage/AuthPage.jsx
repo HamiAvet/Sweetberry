@@ -11,7 +11,6 @@ export const AuthPage = () => {
         email: '',
         password: ''
     });
-    console.log("gx");
     
     const [message, setMessage] = useState('');
     const { login } = useContext(AuthContext)
