@@ -1,0 +1,71 @@
+nav {
+    display: flex;
+    justify-content: center;
+    background: #EAA8A5;
+    border-bottom: #DE5260 4px solid;
+    align-items: center;  
+    height: 75px; 
+    z-index: 2;
+
+    .nav-wrapper {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;  
+        width: 100%;  
+
+        .logo {
+                width: 68px; 
+                height: 68px;
+            img {
+                width: 100%;
+            }
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;  
+            li {
+                height: 35px; 
+                a {
+                    color: #000;
+                    font-weight: bold;
+                    margin-right: 30px;  
+                    height: 35px;  
+                    display: flex;
+                    align-items: center;  
+                    border-radius: 50px;
+                }
+            }
+        }
+
+        .rightPart {
+            display: flex;
+            align-items: center;
+            .cart {
+                display: flex;
+                align-items: center;
+                margin-right: 15px;
+                img {
+                    width: 30px;
+                }
+            }
+            .button {
+                background: #DE5260;
+                border-radius: 50px;
+                padding: 5px 20px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;  
+                height: 35px;  
+                width: 150px;
+                font-weight: bold;
+            }
+    
+            .button:hover {
+                background: #b53a46;
+                transition: 0.5s;
+            }
+        }
+        
+    }
+}

@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background: url("../../../public/images/background.PNG");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    max-width: 100%;
+    min-height: 737px;
+}
+
+.auth-page{
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 150px;
+    h2 {
+        color: #fff;
+        font-weight: bold;
+        text-decoration: underline
+    }
+    .form-login, .form-sing-up {
+        .pack {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .row {
+            margin-bottom: 0;
+        }
+        .row .col.s5 {
+            margin: 0px;
+        }
+        .btn {
+        margin-right: 30px;
+        background: #DE5260;
+        border-radius: 50px;
+        padding: 0 20px; 
+        height: 35px;  
+        width: 150px;
+        }
+        .btn:hover {
+            background: #b53a46;
+            transition: 0.5s;
+        }
+        .btn-reg,
+        .btn-auth {
+            color: #fff;
+            font-weight: bold;
+            width: 190px;
+            display: inline-block;
+        }
+        .btn-reg:hover,
+        .btn-auth:hover {
+            color: #ffffffc4;
+            font-weight: bold;
+            transition: 0.5s;
+        }
+        .input-field {
+            input.validate {
+                border-radius: 25px;
+                padding: 10px 5px 5px 16px;
+                border-bottom: #DE5260 4px solid;
+                background: #fff;
+                transition: 1s;
+            }
+            input.not-validate {
+                border-radius: 25px;
+                padding: 10px 5px 5px 16px;
+                border: orangered 2px solid;
+                border-bottom: orangered 6px solid;
+                background: #fff;
+                transition: 1s;
+            }
+            label.active {
+                padding: 20px;
+            }
+            label {
+                padding: 5px 0px 0 10px;
+                width: 100px;
+                pointer-events: none;
+            }
+        }
+    }
+
+    .error-message {
+        opacity: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        animation: 3s error linear ;
+    }
+    
+    .error-message p {
+        width: 220px;
+        padding: 20px;
+        background: orangered;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 20px;
+        margin-top: 100px;
+    }
+}
+
+    @keyframes error {
+        0% {
+            opacity: 0;
+        }
+        10% {
+            opacity: 1;
+        }
+        60% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    

@@ -1,0 +1,285 @@
+.container {
+    background: url("../../../public/images/background.PNG");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    max-width: 100%;
+    min-height: 737px;
+}
+
+.config-container {
+    padding-top: 75px;
+}
+
+.config-window  {
+    width: 70%;
+    background: #E4C6C5;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    img {
+        width: 480px;
+        height: 500px;
+        border: #DE5260 2px solid;
+    }
+
+    p {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .main-underline {
+        width: 280px;
+        height: 4px;
+        background: #DE5260;
+        margin: 20px 0;
+    }
+
+    .produit-config {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        h3 {
+            font-weight: bold;
+        }
+
+        .selections {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            height: 290px;
+
+            .select {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-weight: bold;
+                width: 150px;
+
+                button {
+                    cursor: pointer;
+                    width: 24px;
+                    height: 24px;
+                    background: black;
+                    border-radius: 100px;
+                    margin-top: 10px;
+
+                    .dash {
+                        width: 10px;
+                        height: 2px;
+                        background: #fff;
+                        position: relative;
+                        left: 5.5px;
+                        transition: 0.5s;
+                        
+                    }
+
+                    .dash2 {
+                        transform: rotate(90deg);
+                        bottom: 1.2px;
+
+                        transition: 0.5s;
+                    }
+
+                }
+
+                .active {
+                    .dash {
+                        top: 0.2px;
+                        
+                    }
+
+                    .dash1 {
+                        transform: rotate(45deg);
+                        transition: 0.5s;
+                        left: 2.2px;
+                        top: 1px;
+                    }
+
+                    .dash2 {
+                        transform: rotate(-45deg);
+                        left: 8.5px;
+                        
+                        transition: 0.5s;
+                    }
+                }
+
+                .selection {
+                    .dash {
+                        top: 0px;
+                        
+                    }
+
+                    .dash1 {
+                        transform: rotate(45deg);
+                        transition: 0.5s;
+                        left: 4.8px;
+                        top: 1.8px;
+                    }
+
+                    .dash2 {
+                        transform: rotate(-45deg);
+                        transition: 0.5s;
+                        left: 5px;
+                    }
+                }
+
+                .list {
+                    display: none;
+                    width: 150px;
+                    margin-top: 10px;
+                    background: #fff;
+
+                    .list-title {
+                        font-size: 14px;
+                        border-bottom: 1px black solid;
+                        margin-bottom: 10px;
+                        width: auto;
+                    }
+
+                    .option {
+                        display: flex;
+                        justify-content: space-evenly;
+                        margin: 5px 0;
+
+                        p {
+                            font-size: 12px;
+                            width: 60px;
+                            text-align: start;
+                        }
+
+                        div {
+                            width: 30px;
+                            height: 30px;
+                            border-radius: 100px;
+                        }
+
+                        [type="checkbox"]+span:not(.lever) {
+                            padding-left: 20px;
+                            height: 7px;
+                        }
+                    }
+
+                    .option1 {
+                        div {
+                            background: #FAEBD7;
+                        }
+                    }
+
+                    .option2 {
+                        div {
+                            background: #340E08;
+                        }
+                    }
+
+                    .option3 {
+                        div {
+                            background: #F2828C;
+                        }
+                    }
+
+                    .option4 {
+                        div {
+                            background: #A5563F;
+                        }
+                    }
+
+                    .option5 {
+                        div {
+                            background: url("../../../public/images/multicolor.png");
+                        }
+                    }
+                }
+            }
+        }
+
+        .submit {
+            display: flex;
+            justify-content: space-between;
+            width: 400px;
+            margin-bottom: 30px;
+            .quantity {
+                width: 150px;
+                height: 40px;
+                display: flex;
+
+                .minus {
+                    cursor: pointer;
+                    width: 40px;
+                    height: 40px;
+                    background: #DE5260;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px black solid;
+
+                    p {
+                        font-size: 40px;
+                    }
+                }
+
+                .minus:hover {
+                    background: #b53a46;
+                    transition: 0.5s;
+                }
+
+                .count {
+                    width: 70px;
+                    height: 40px;
+                    background: #fff;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-top: 2px black solid;
+                    border-bottom: 2px black solid;
+                }
+
+                .plus {
+                    cursor: pointer;
+                    width: 40px;
+                    height: 40px;
+                    background: #DE5260;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px black solid;
+
+                    p {
+                        font-size: 40px;
+                    }
+                }
+
+                .plus:hover {
+                    background: #b53a46;
+                    transition: 0.5s;
+                }
+            }
+
+            .submit-button {
+                cursor: pointer;
+                background: #DE5260;
+                border-radius: 50px;
+                padding: 5px 20px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;  
+                height: 35px;  
+                width: 150px;
+                border: none;
+                color: #fff;
+                font-weight: bold;
+            }
+    
+            .submit-button:hover {
+                background: #b53a46;
+                transition: 0.5s;
+            }
+        }
+    }
+
+}
