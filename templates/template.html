@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        header {
+            width: 990px;
+            height: 220px;
+            background: #EAA8A5;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            border-bottom: #DE5260 5px solid;
+        }
+        .left {
+            display: flex;
+            align-items: center;
+        }
+        img {
+            width: 120px;
+            height: 120px;
+        }
+        .company-info {
+            margin-left: 10px;
+        }
+
+        .company-web p, .company-phone p, .company-email p {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .right {
+            padding-top: 30px;
+        }
+        .right h3 {
+            font-size: 42px;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        .right h2 {
+            font-size: 84px;
+            margin-top: 5px;
+        }
+
+        main {
+            width: 970px;
+            height: 1060px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-left: 10px;
+        }
+        .details {
+            width: 970px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .bill-to-title {
+            font-size: 32px;
+        }
+        .bill-to p {
+            font-size: 18px;
+            margin: 24px 0;
+        }
+        .invoice-id p {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .invoice-id strong {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .invoice-info p {
+            font-size: 20px;
+        }
+        table {
+            width: 968px;
+            min-height: 460px;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        table th, table td {
+            border: 3px solid #DE5260;
+            text-align: left;
+            padding: 8px;
+        }
+        table th {
+            background-color: #EAA8A5;
+            text-align: center;
+            font-size: 24px;
+
+        }
+        .summary {
+            text-align: right;
+            width: 370px;
+            height: 260px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        .summary div {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 370px;
+            height: 45px;
+        }
+        .summary div p {
+            width: 370px;
+            height: 45px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .total p {
+            background-color: #EAA8A5;
+            border: 3px solid #DE5260;
+        }
+        .terms {
+            width: 950px;
+        }
+        .terms strong {
+            font-size: 20px;
+        }
+        .terms p {
+            font-size: 16px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="left">
+            <img src="https://i.imgur.com/ZwVXqOZ.png" alt="sweetberry">
+            <div class="company-info">
+                <div class="company-web"><p>www.sweetberry.com</p></div>
+                <div class="company-phone"><p>+33 63 30 36 36</p></div>
+                <div class="company-email"><p>sweetberry@gmail.com</p></div>
+            </div>
+        </div>
+        <div class="right">
+            <h3 class="company-name">SweetBerry</h3>
+            <h2 class="Invoice">INVOICE</h2>
+        </div>
+    </header>
+    <main>
+        <div class="details">
+            <div class="bill-to">
+                <strong class="bill-to-title">Bill to</strong>
+                <p><strong>Full Name: </strong>{firstname} {lastname}</p>
+                <p><strong>Address: </strong>{address}</p>
+            </div>
+            <div class="invoice-info">
+                <div class="invoice-id">
+                    <p>Invoice ID#</p>
+                    <strong>{invoiceid}</strong>
+                </div>
+                <p><strong>Phone: </strong>{phonenumber}</p>
+                <p><strong>E-Mail: </strong>{email}</p>
+                <p><strong>Date: </strong>{date}</p>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Item</th>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Unity Price</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>            
+        </table>
+
+        <div class="summary">
+            <div>
+                <p>Sub Total</p>
+                <p>{subtotal} €</p>
+            </div>
+            <div>
+                <p>Taxes</p>
+                <p>{tax} €</p>
+            </div>
+            <div>
+                <p>Shipping Costs</p>
+                <p>0.00 €</p>
+            </div>
+            <div class="total">
+                <p>Total Cost</p>
+                <p>{totalcost} €</p>
+            </div>
+        </div>
+    
+        <div class="terms">
+            <strong>Terms & Conditions</strong>
+            <p>All services provided are subject to the terms and conditions outlined in the contract agreement or engagement letter.</p>
+        </div>
+    </main>
+</body>
+</html>
