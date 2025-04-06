@@ -148,9 +148,7 @@ const CartPage = () => {
     const userId = JSON.parse(localStorage.getItem('userData'))["userId"]; 
     const tax = 1.45;
     let totalPrice = 0;
-    let orderId = `INV-${Math.round(Math.random()*10000)}`;
-    console.log(orderId);
-    
+    let orderId = `INV-${Math.round(Math.random()*10000)}`;    
     
     Object.keys(items).forEach((itemsKey) => {        
         totalPrice += items[itemsKey].Price || 0;

@@ -60,10 +60,8 @@ router.get('/:userId/:invoiceId', async (req, res) => {
         
         const user = await User.findById(userId)
         const orders = await Order.find({ userId: userId, orderId: invoiceId });
-
         const ordersList = orders[0].items    
-        
-
+                
         let newTemplate = makeNewTemplate(templateHTML, user, invoiceId, ordersList)
 
         if (!cachedPdf) {

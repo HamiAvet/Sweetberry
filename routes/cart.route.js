@@ -8,9 +8,9 @@ router.post('/',
     try {
       const { orderId, userId, items } = req.body;
       
+      const date = new Date().toLocaleDateString()
       
-      
-      const newOrder = new Order({orderId, userId, items});
+      const newOrder = new Order({orderId, userId, date, items});
       
       await newOrder.save();
      
