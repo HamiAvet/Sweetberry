@@ -38,6 +38,23 @@
             width: 200px;
             font-size: 20px;
         }
+
+        button {
+            background: #DE5260;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            height: 42px;  
+            width: 152px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+    
+        button:hover {
+            background: #b53a46;
+            transition: 0.5s;
+        }
     }
 
     .myInfo {
