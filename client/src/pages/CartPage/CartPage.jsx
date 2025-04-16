@@ -155,14 +155,17 @@ const CartPage = () => {
         subTotal += items[itemsKey].Price || 0;
     });
 
-    let totalCost = subTotal + tax
+    let totalCost = (subTotal + tax).toFixed(2)
     
     const cartHandler = async () => {
         try {
             await axios.post('/api/cart', {orderId, userId, items, totalCost})
+            localStorage.removeItem("cart");
+
         } catch (err) {
           console.log(err)
         }
+        
     }
 
     return (

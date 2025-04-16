@@ -28,8 +28,8 @@ const makeNewTemplate = (template, user, invoiceId, ordersList) => {
                     Confetti: ${items.Confetti || "N/A"}
                 </td>
                 <td>${items.Quantity || 0}</td>
-                <td>${items.PriceForOne || "0.00"}€</td>
-                <td>${items.Price || "0.00"}€</td>
+                <td>${items.PriceForOne.toFixed(2) || "0.00"}€</td>
+                <td>${items.Price.toFixed(2) || "0.00"}€</td>
             </tr>
         `;
     })
@@ -63,8 +63,6 @@ router.get('/:userId/:invoiceId', async (req, res) => {
 
 
         let cachedPdf = await htmlToPdf(newTemplate);
-        
-        console.log(cachedPdf);
         
         res.contentType('application/pdf');
         res.setHeader('Content-Disposition', 'attachment; filename="invoice.pdf"');

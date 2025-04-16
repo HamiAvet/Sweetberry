@@ -14,8 +14,6 @@ const MyAccountPage = () => {
                 
                 setUser(response.data.user);
                 setOrders(response.data.orders);
-                
-                
 
             } catch (error) {
                 console.error("Error loading data", error);
@@ -26,9 +24,7 @@ const MyAccountPage = () => {
 
     }, [userId])
 
-    const downloadPdf = async (invoiceId) => {
-        console.log(invoiceId);
-        
+    const downloadPdf = async (invoiceId) => {        
         try {
             const response = await axios({
                 url: `http://localhost:5000/myaccount/${userId["userId"]}/${invoiceId}`,
@@ -65,34 +61,37 @@ const MyAccountPage = () => {
                 <div className="title">
                     <h2>My Orders :</h2>
                 </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Order</th>
-                            <th>Date</th>
-                            <th>Total Cost</th>
-                            <th>Status</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {orders.length > 0 ? (
-                            orders.map((order, index) => (
-                                <tr key={index}>
-                                    <td>{order.orderId}</td>
-                                    <td>{order.date}</td>
-                                    <td>{order.totalCost} €</td>
-                                    <td>state</td>
-                                    <td><button onClick={() => downloadPdf(order.orderId)}>Download Check</button></td>
-                                </tr>
-                            ))
-                        ) : (
+                <div className="tb">
+                    <table>
+                        <thead>
                             <tr>
-                                <td colSpan="4"></td>
+                                <th>Order</th>
+                                <th>Date</th>
+                                <th>Total Cost</th>
+                                <th>Status</th>
+
                             </tr>
-                        )}
-                    </tbody>         
-                </table>
+                        </thead>
+                        <tbody>
+                            {orders.length > 0 ? (
+                                orders.map((order, index) => (
+                                    <tr key={index}>
+                                        <td>{order.orderId}</td>
+                                        <td>{order.date}</td>
+                                        <td>{order.totalCost} €</td>
+                                        <td>state</td>
+                                        <td><button onClick={() => downloadPdf(order.orderId)}>Download Check</button></td>
+                                    </tr>
+                                ))
+                            ) : (
+                                <tr>
+                                    <td colSpan="4"></td>
+                                </tr>
+                            )}
+                        </tbody>         
+                    </table>
+                </div>
+
             </div>
             <div className="myInfo">
                 <div className="info">

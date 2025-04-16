@@ -26,13 +26,21 @@
             }
         }
 
-        table {
-            width: 90%;
+        .tb {
+            max-height: 900px;
+            overflow-y: auto;
+            display: flex;
+            justify-content: center;
+            
+            table {
+                width: 90%;
 
-            thead {
-                border-bottom: #DE5260 6px solid;
+                thead {
+                    border-bottom: #DE5260 6px solid;
+                }
             }
         }
+
 
         th {
             width: 200px;
