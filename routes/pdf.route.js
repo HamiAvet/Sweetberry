@@ -15,7 +15,7 @@ const makeNewTemplate = (template, user, invoiceId, ordersList) => {
     const tax = 1.45;
     let subtotal = 0;
     let itemsRows = "";
-    Object.keys(ordersList).forEach((orderKey, index) => {        
+    Object.keys(ordersList).forEach((orderKey, index) => {      
         const items = ordersList[orderKey];
         subtotal += items.Price
         itemsRows += `
@@ -54,18 +54,19 @@ router.get('/:userId/:invoiceId', async (req, res) => {
     try {
         const userId = req.params['userId']
         const invoiceId = req.params['invoiceId']
-        console.log(invoiceId);
         
         
         const user = await User.findById(userId)
         const orders = await Order.find({ userId: userId, orderId: invoiceId });
         const ordersList = orders[0].items    
                 
-        let newTemplate = makeNewTemplate(templateHTML, user, invoiceId, ordersList)
+        let newTemplate = makeNewTemplate(templateHTML, user, invoiceId, ordersList)        
 
-        if (!cachedPdf) {
-            cachedPdf = await htmlToPdf(newTemplate);
-        }
+
+        cachedPdf = await htmlToPdf(newTemplate);
+        
+        console.log(cachedPdf);
+        
         res.contentType('application/pdf');
         res.setHeader('Content-Disposition', 'attachment; filename="invoice.pdf"');
         res.end(cachedPdf);
