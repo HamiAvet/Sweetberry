@@ -31,12 +31,18 @@
             padding: 5px;
         }
 
-        button {
+        .indication {
+            font-size: 19px;
+            width: 800px;
+            
+        }
+
+        a {
             background: #DE5260;
             color: white;
             border: none;
             border-radius: 20px;
-            padding: 5px 20px;
+            padding: 10px 0;
             height: 42px;  
             width: 152px;
             font-weight: bold;
@@ -44,15 +50,9 @@
             margin: 20px 0;
         }
     
-        button:hover {
+        a:hover {
             background: #b53a46;
             transition: 0.5s;
         }
-    
-        .qrcode {
-            width: 160px;
-            margin: 20px;
-        }
     }
-
 }

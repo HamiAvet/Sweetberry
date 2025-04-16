@@ -15,9 +15,7 @@ const makeNewTemplate = (template, user, invoiceId, ordersList) => {
     const tax = 1.45;
     let subtotal = 0;
     let itemsRows = "";
-    Object.keys(ordersList).forEach((orderKey, index) => {
-        console.log(ordersList);
-        
+    Object.keys(ordersList).forEach((orderKey, index) => {        
         const items = ordersList[orderKey];
         subtotal += items.Price
         itemsRows += `
@@ -56,7 +54,8 @@ router.get('/:userId/:invoiceId', async (req, res) => {
     try {
         const userId = req.params['userId']
         const invoiceId = req.params['invoiceId']
-
+        console.log(invoiceId);
+        
         
         const user = await User.findById(userId)
         const orders = await Order.find({ userId: userId, orderId: invoiceId });

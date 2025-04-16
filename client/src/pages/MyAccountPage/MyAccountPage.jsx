@@ -27,6 +27,8 @@ const MyAccountPage = () => {
     }, [userId])
 
     const downloadPdf = async (invoiceId) => {
+        console.log(invoiceId);
+        
         try {
             const response = await axios({
                 url: `http://localhost:5000/myaccount/${userId["userId"]}/${invoiceId}`,
@@ -43,7 +45,7 @@ const MyAccountPage = () => {
             // Create a temporary <a> element to trigger the download
             const tempLink = document.createElement("a");
             tempLink.href = url;
-            tempLink.setAttribute("download", "bill.pdf"); // Set the desired filename for the downloaded file
+            tempLink.setAttribute("download", `${invoiceId}.pdf`); // Set the desired filename for the downloaded file
 
             // Append the <a> element to the body and click it to trigger the download
             document.body.appendChild(tempLink);
