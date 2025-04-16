@@ -9,7 +9,6 @@ const router = express.Router();
 const templatePath = path.join(__dirname, '../templates/template.html');
 let templateHTML = fs.readFileSync(templatePath, 'utf8');
 
-let cachedPdf = null;
 
 const makeNewTemplate = (template, user, invoiceId, ordersList) => {
     const tax = 1.45;
@@ -63,7 +62,7 @@ router.get('/:userId/:invoiceId', async (req, res) => {
         let newTemplate = makeNewTemplate(templateHTML, user, invoiceId, ordersList)        
 
 
-        cachedPdf = await htmlToPdf(newTemplate);
+        let cachedPdf = await htmlToPdf(newTemplate);
         
         console.log(cachedPdf);
         
