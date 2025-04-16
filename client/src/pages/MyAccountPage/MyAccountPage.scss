@@ -1,0 +1,119 @@
+.myAccount-container {
+    background: #E4C6C5;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    max-width: 100%;
+    min-height: 737px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .myOrders {
+        width: 900px;
+        height: 600px;
+        background: #EAA8A5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .title {
+            width: 100%;
+
+            h2 {
+                margin: 20px 0 20px 40px;
+                font-weight: bold;
+            }
+        }
+
+        table {
+            width: 90%;
+
+            thead {
+                border-bottom: #DE5260 6px solid;
+            }
+        }
+
+        th {
+            width: 200px;
+            font-size: 20px;
+        }
+    }
+
+    .myInfo {
+        width: 400px;
+        height: 600px;
+        background: #EAA8A5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+
+        .info {
+            width: 100%;
+
+            .user {
+                display: flex;
+                align-items: center;
+                
+
+                h3 {
+                    font-size: 40px;
+                    margin-top: 15px;
+                    margin-bottom: 25px;
+                    font-weight: bold;
+                }
+
+                img {
+                    width: 54px;
+                    height: 60px;
+                    margin-right: 20px;
+                }
+            }
+
+            .address, .mail, .phone {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                margin-bottom: 10px;
+                font-size: 18px;
+
+                img {
+                    margin-right: 20px;
+                }
+            }
+
+            .edit {
+                display: flex;
+                align-items: center;
+                width: 100%;
+
+                p {
+                    font-size: 20px;
+                    text-decoration: underline #DE5260 3px;
+                    font-weight: bold;
+                    color: #DE5260;
+                    
+                }
+
+
+                img {
+                    margin-right: 20px;
+                }
+            }
+        } 
+
+        .settings {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100%;
+            font-size: 18px;
+
+            img {
+                margin-left: 20px;
+            }
+        }
+    }
+}

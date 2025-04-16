@@ -6,11 +6,11 @@ const Order = require('../models/Order');
 router.post('/', 
   async (req, res) => {
     try {
-      const { orderId, userId, items } = req.body;
+      const { orderId, userId, items, totalCost } = req.body;
       
       const date = new Date().toLocaleDateString()
       
-      const newOrder = new Order({orderId, userId, date, items});
+      const newOrder = new Order({orderId, userId, date, totalCost, items});
       
       await newOrder.save();
      

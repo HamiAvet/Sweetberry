@@ -147,16 +147,19 @@ const CartPage = () => {
     const items = JSON.parse(localStorage.getItem("cart")) || {};
     const userId = JSON.parse(localStorage.getItem('userData'))["userId"]; 
     const tax = 1.45;
-    let totalPrice = 0;
-    let orderId = `INV-${Math.round(Math.random()*10000)}`;    
+    let subTotal = 0;
+    
+    let orderId = `INV-${Math.round(Math.random()*10000)}`;
     
     Object.keys(items).forEach((itemsKey) => {        
-        totalPrice += items[itemsKey].Price || 0;
+        subTotal += items[itemsKey].Price || 0;
     });
+
+    let totalCost = subTotal + tax
     
     const cartHandler = async () => {
         try {
-            await axios.post('/api/cart', {orderId, userId, items})
+            await axios.post('/api/cart', {orderId, userId, items, totalCost})
         } catch (err) {
           console.log(err)
         }
@@ -181,7 +184,7 @@ const CartPage = () => {
                         <div className="small-underline"></div>
                         <div className="subtotal">
                             <p className="title">Subtotal</p>
-                            <p className="cost">{Math.round(totalPrice * 100) / 100} €</p>
+                            <p className="cost">{Math.round(subTotal * 100) / 100} €</p>
                         </div>
                         <div className="shipping-costs">
                             <p className="title">Shipping costs</p>
@@ -191,7 +194,7 @@ const CartPage = () => {
                             <p className="title">Total cost</p>
                             <div className="subtitle">
                                 <p className="cost">
-                                    {Math.round((totalPrice + tax) * 100) / 100} €
+                                    {Math.round(totalCost * 100) / 100} €
                                 </p>
                                 <p className="taxe">All taxes included</p>
                             </div>

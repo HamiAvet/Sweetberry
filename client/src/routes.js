@@ -5,9 +5,9 @@ import AuthPage from "./pages/AuthPage/AuthPage"
 import ConfigPage from "./pages/ConfigPage/ConfigPage"
 import CartPage from "./pages/CartPage/CartPage"
 import InvoicePage from "./pages/InvoicePage/InvoicePage"
+import MyAccountPage from "./pages/MyAccountPage/MyAccountPage";
 
 export const useRoutes = (isLogin, currentPath) => {
-
     if (isLogin && currentPath === "/configuration") {
         return (
             <Routes>
@@ -20,6 +20,14 @@ export const useRoutes = (isLogin, currentPath) => {
         return (
             <Routes>
                 <Route path="*" exact element={<CartPage />} />
+            </Routes>
+        );
+    }
+
+    if (isLogin && currentPath === "/myaccount") {
+        return (
+            <Routes>
+                <Route path="*" exact element={<MyAccountPage />} />
             </Routes>
         );
     }
@@ -43,7 +51,7 @@ export const useRoutes = (isLogin, currentPath) => {
 
     return (
         <Routes>
-            <Route path="/*" exact element={<AuthPage />} />
+            <Route path="*" exact element={<AuthPage />} />
         </Routes>
     );
 }

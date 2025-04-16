@@ -18,6 +18,8 @@ const InvoicePage = () => {
                 responseType: "blob",
             });
 
+            console.log(response);
+            
             
             // Create a Blob from the response data
             const pdfBlob = new Blob([response.data], { type: "application/pdf" });

@@ -4,6 +4,7 @@ const schema = new Schema({
     orderId: { type: String, required: true, unique: true },
     userId: { type: String, required: true },
     date: { type: String, required: true },
+    totalCost: { type: String, required: true },
     items: { type: Object, required: true }
 });
 
