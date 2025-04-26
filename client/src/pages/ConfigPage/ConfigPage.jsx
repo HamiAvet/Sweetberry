@@ -349,8 +349,7 @@ const ConfigPage = () => {
                                         );
                                     })}
                                 </div>
-                                
-                                <div className="dopingPrice" style={{ display: selectedOptions.decorativeLines.selected === 1 ? "block" : "none" }}><p>0.5€</p></div>
+                                <div className="dopingPrice" style={{display:selectedOptions.decorativeLines.selected === 1 && selectedOptions.decorativeLines.layer != null ? "block" : "none" }}><p>0.5€</p></div>
                             </div>
 
                             <div className="select select-decoratives-points">
@@ -389,7 +388,7 @@ const ConfigPage = () => {
                                         );
                                     })}
                                 </div>
-                                <div className="dopingPrice" style={{display:selectedOptions.decorativePoints.selected===1 ? "block" : "none" }}><p>0.5€</p></div>
+                                <div className="dopingPrice" style={{display:selectedOptions.decorativePoints.selected === 1 && selectedOptions.decorativePoints.layer != null ? "block" : "none" }}><p>0.5€</p></div>
                             </div>
 
                             <div className="select select-confetti">
@@ -429,7 +428,7 @@ const ConfigPage = () => {
                                         );
                                     })}
                                 </div>
-                                <div className="dopingPrice" style={{display:selectedOptions.confetti.selected===1 ? "block" : "none" }}><p>0.5€</p></div>
+                                <div className="dopingPrice" style={{display:selectedOptions.confetti.selected === 1 && selectedOptions.confetti.layer != null ? "block" : "none" }}><p>0.5€</p></div>
                             </div>
                         </div>
 

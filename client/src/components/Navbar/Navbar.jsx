@@ -1,10 +1,10 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, useMemo } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { CartContext } from "../../context/CartContext";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-scroll";
+import axios from "axios";
 import "./Navbar.scss";
-
 
 
 const Navbar = () => {
@@ -14,30 +14,36 @@ const Navbar = () => {
   const location = useLocation();
   const currentPath = location.pathname;
 
+  const [user, setUser] = useState()
+  const userId = useMemo(() => {
+    return JSON.parse(localStorage.getItem('userData'));
+  }, [])
+
+  useEffect( () => {
+    const getData = async () => {
+      try {
+          const response = await axios.get(`http://localhost:5000/myaccount/${userId["userId"]}`);
+          
+          setUser(response.data.user);
+
+      } catch (error) {
+          console.error("Error loading data", error);
+      }
+  };
+
+  getData()
+  }, [userId])
+
   const DropDown = () => {
     const [isOpen, setIsOpen] = useState(false)
   
     return (
-      <div>
-        <button onClick={() => setIsOpen(!isOpen)}>aaaaaaa</button>
+      <div className="dropDown">
+        <div className="userButton" onClick={() => setIsOpen(!isOpen)}><p className="userName">{user?.firstname} {user?.lastname}</p><img className="userLogo" src="images/arrow-down-s-fill.png" alt="userLogo" /></div>
         {isOpen && (
-          <ul
-            style={{
-              position: "absolute",
-              right: 0,
-              top: "110%",
-              background: "white",
-              boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-              borderRadius: "4px",
-              listStyle: "none",
-              padding: "8px 0",
-              margin: 0,
-              minWidth: "160px",
-              zIndex: 1000,
-            }}
-          >
-            <li><a className="button" href="/login" onClick={logout}>Logout</a></li>
-            <li><a className="button" href="/myaccount">MyAccount</a></li>
+          <ul className="dropDownList">
+            <li><a className="dropDownButton" href="/myaccount"><img src="images/id-card-line.png" alt=" "/> MyAccount</a></li>
+            <li><a className="dropDownButton" href="/login" onClick={logout}><img src="images/logout-box.png" alt=" "/> Logout</a></li>
           </ul>
         )}
       </div>
