@@ -2,7 +2,7 @@ import "./EditInfoPage.scss"
 
 const EditInfoPage = () => {
     return (
-        <p>EditInfoPage</p>
+        <div className="edit-container"></div>
     )
 }
 

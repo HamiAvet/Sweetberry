@@ -2,7 +2,7 @@ import "./EditPasswordPage.scss"
 
 const EditPasswordPage = () => {
     return (
-        <p>EditPasswordPage</p>
+        <div className="edit-container"></div>
     )
 }
 

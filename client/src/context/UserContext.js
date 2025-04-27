@@ -14,8 +14,6 @@ export const UserProvider = ({ children }) => {
             const response = await axios.get(`http://localhost:5000/myaccount/${userId["userId"]}`);
             
             setUser(response.data.user);
-            console.log(user);
-            
 
         } catch (error) {
             console.error("Error loading data", error);

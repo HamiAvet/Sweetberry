@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState, useMemo } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { CartContext } from "../../context/CartContext";
 import { useLocation } from "react-router-dom";
@@ -15,27 +15,31 @@ const Navbar = () => {
   const currentPath = location.pathname;
 
   const [user, setUser] = useState()
-  const userId = useMemo(() => {
-    return JSON.parse(localStorage.getItem('userData'));
-  }, [])
+  const [userId, setUserId] = useState()
+
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem('userData'));
+    if (data) {
+      setUserId(data);
+    } else {
+      setUserId(null); 
+    }
+  }, [isLogin]);
 
   useEffect( () => {
     const getData = async () => {
+      if (!userId) return;
       try {
           const response = await axios.get(`http://localhost:5000/myaccount/${userId["userId"]}`);
-          
           setUser(response.data.user);
-
-          
-          
-
       } catch (error) {
           console.error("Error loading data", error);
       }
   };
 
   getData()
-  }, [userId])
+  }, [userId, isLogin])
+
 console.log(user);
   const DropDown = () => {
     const [isOpen, setIsOpen] = useState(false)
