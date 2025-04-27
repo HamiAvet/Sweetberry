@@ -6,6 +6,8 @@ import ConfigPage from "./pages/ConfigPage/ConfigPage"
 import CartPage from "./pages/CartPage/CartPage"
 import InvoicePage from "./pages/InvoicePage/InvoicePage"
 import MyAccountPage from "./pages/MyAccountPage/MyAccountPage";
+import EditInfoPage from "./pages/EditInfoPage/EditInfoPage";
+import EditPasswordPage from "./pages/EditPasswordPage/EditPasswordPage";
 
 export const useRoutes = (isLogin, currentPath) => {
     if (isLogin && currentPath === "/configuration") {
@@ -28,6 +30,22 @@ export const useRoutes = (isLogin, currentPath) => {
         return (
             <Routes>
                 <Route path="*" exact element={<MyAccountPage />} />
+            </Routes>
+        );
+    }
+
+    if (isLogin && currentPath === "/editinformation") {
+        return (
+            <Routes>
+                <Route path="*" exact element={<EditInfoPage />} />
+            </Routes>
+        );
+    }
+
+    if (isLogin && currentPath === "/changepassword") {
+        return (
+            <Routes>
+                <Route path="*" exact element={<EditPasswordPage />} />
             </Routes>
         );
     }

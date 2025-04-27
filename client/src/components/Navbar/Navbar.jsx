@@ -26,6 +26,9 @@ const Navbar = () => {
           
           setUser(response.data.user);
 
+          
+          
+
       } catch (error) {
           console.error("Error loading data", error);
       }
@@ -33,7 +36,7 @@ const Navbar = () => {
 
   getData()
   }, [userId])
-
+console.log(user);
   const DropDown = () => {
     const [isOpen, setIsOpen] = useState(false)
   

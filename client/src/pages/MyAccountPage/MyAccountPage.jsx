@@ -114,16 +114,18 @@ const MyAccountPage = () => {
                         <img src="/images/Phone.png" alt="phone" />
                         <p>{user?.phonenumber || "N/A"}</p>
                     </div>
-                    <a href="/myaccount" className="edit">
+                    <a href="/editinformation" className="edit">
                         <img src="/images/Edit.png" alt="edit" />
                         <p>Edit informations</p>
                     </a>
                 </div>
-
                 <div className="settings">
-                    <p>Change Password</p>
-                    <img src="/images/Settings.png" alt="settings" />
+                    <a href="/changepassword" className="settingsButton">
+                        <p>Change Password</p>
+                        <img src="/images/Settings.png" alt="settings" />
+                    </a>
                 </div>
+
             </div>
         </div>
     );

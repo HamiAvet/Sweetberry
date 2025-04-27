@@ -113,7 +113,7 @@
             .edit {
                 display: flex;
                 align-items: center;
-                width: 100%;
+                width: fit-content;
 
                 p {
                     font-size: 20px;
@@ -135,11 +135,20 @@
             align-items: center;
             justify-content: flex-end;
             width: 100%;
-            font-size: 18px;
 
-            img {
-                margin-left: 20px;
+            .settingsButton {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                color: #000;
+
+                font-size: 18px;
+
+                img {
+                    margin-left: 20px;
+                }
             }
         }
+        
     }
 }
