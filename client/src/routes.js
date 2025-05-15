@@ -6,8 +6,7 @@ import ConfigPage from "./pages/ConfigPage/ConfigPage"
 import CartPage from "./pages/CartPage/CartPage"
 import InvoicePage from "./pages/InvoicePage/InvoicePage"
 import MyAccountPage from "./pages/MyAccountPage/MyAccountPage";
-import EditInfoPage from "./pages/EditInfoPage/EditInfoPage";
-import EditPasswordPage from "./pages/EditPasswordPage/EditPasswordPage";
+import EditPage from "./pages/EditPage/EditPage";
 
 export const useRoutes = (isLogin, currentPath) => {
     if (isLogin && currentPath === "/configuration") {
@@ -34,18 +33,10 @@ export const useRoutes = (isLogin, currentPath) => {
         );
     }
 
-    if (isLogin && currentPath === "/editinformation") {
+    if (isLogin && (currentPath === "/editinformation" || currentPath === "/changepassword")) {
         return (
             <Routes>
-                <Route path="*" exact element={<EditInfoPage />} />
-            </Routes>
-        );
-    }
-
-    if (isLogin && currentPath === "/changepassword") {
-        return (
-            <Routes>
-                <Route path="*" exact element={<EditPasswordPage />} />
+                <Route path="*" exact element={<EditPage />} />
             </Routes>
         );
     }
