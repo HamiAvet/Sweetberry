@@ -23,7 +23,8 @@ const MyAccountPage = () => {
         getData()
 
     }, [userId])
-
+    console.log(user);
+    
     const downloadPdf = async (invoiceId) => {        
         try {
             const response = await axios({
